@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine - MedReach</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i> MedReach
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="/services.html"><i class="fas fa-medkit"></i> Services</a></li>
+                <li><a href="/medicine.html" class="active"><i class="fas fa-pills"></i> Medicine</a></li>
+                <li><a href="/volunteer.html"><i class="fas fa-hands-helping"></i> Volunteer</a></li>
+                <li><a href="/resources.html"><i class="fas fa-book-medical"></i> Resources</a></li>
+                <li><a href="/about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="/contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li class="auth-buttons">
+                    <button class="btn btn-login"><i class="fas fa-sign-in-alt"></i> Login</button>
+                    <button class="btn btn-register"><i class="fas fa-user-plus"></i> Register</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Medicine Hero Section -->
+        <section class="page-hero">
+            <div class="hero-content">
+                <h1><i class="fas fa-pills"></i> Medicine Access</h1>
+                <p>Request essential medicines and track your prescriptions</p>
+            </div>
+        </section>
+
+        <!-- Medicine Request Form -->
+        <section class="medicine-request-section">
+            <div class="container">
+                <div class="request-form-container">
+                    <h2>Request Medicine</h2>
+                    <form id="medicineRequestForm" class="medicine-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="patientName">Patient Name *</label>
+                                <input type="text" id="patientName" name="patientName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="patientAge">Age *</label>
+                                <input type="number" id="patientAge" name="patientAge" min="1" max="120" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactNumber">Contact Number *</label>
+                                <input type="tel" id="contactNumber" name="contactNumber" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="emergencyContact">Emergency Contact</label>
+                                <input type="tel" id="emergencyContact" name="emergencyContact">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Address *</label>
+                            <textarea id="address" name="address" rows="3" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="medicineName">Medicine Name *</label>
+                            <input type="text" id="medicineName" name="medicineName" placeholder="e.g., Paracetamol, Insulin, etc." required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="dosage">Dosage</label>
+                                <input type="text" id="dosage" name="dosage" placeholder="e.g., 500mg, 10ml">
+                            </div>
+                            <div class="form-group">
+                                <label for="quantity">Quantity Needed</label>
+                                <input type="text" id="quantity" name="quantity" placeholder="e.g., 30 tablets, 1 bottle">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="urgency">Urgency Level *</label>
+                            <select id="urgency" name="urgency" required>
+                                <option value="">Select urgency</option>
+                                <option value="emergency">Emergency (Within 24 hours)</option>
+                                <option value="urgent">Urgent (Within 3 days)</option>
+                                <option value="normal">Normal (Within 1 week)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="medicalCondition">Medical Condition/Reason</label>
+                            <textarea id="medicalCondition" name="medicalCondition" rows="3" placeholder="Brief description of the medical condition requiring this medicine"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="prescription">Prescription (Optional)</label>
+                            <input type="file" id="prescription" name="prescription" accept="image/*,.pdf">
+                            <small>Upload prescription image or PDF if available</small>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <label for="consent">I consent to sharing my medical information with healthcare volunteers for the purpose of medicine distribution</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Available Medicines -->
+        <section class="available-medicines-section">
+            <div class="container">
+                <h2>Currently Available Medicines</h2>
+                <div class="medicines-grid">
+                    <div class="medicine-card">
+                        <div class="medicine-icon">
+                            <i class="fas fa-tablets"></i>
+                        </div>
+                        <h3>Pain Relief</h3>
+                        <ul>
+                            <li>Paracetamol</li>
+                            <li>Ibuprofen</li>
+                            <li>Aspirin</li>
+                        </ul>
+                        <span class="availability available">Available</span>
+                    </div>
+
+                    <div class="medicine-card">
+                        <div class="medicine-icon">
+                            <i class="fas fa-syringe"></i>
+                        </div>
+                        <h3>Diabetes Care</h3>
+                        <ul>
+                            <li>Insulin</li>
+                            <li>Metformin</li>
+                            <li>Glipizide</li>
+                        </ul>
+                        <span class="availability available">Available</span>
+                    </div>
+
+                    <div class="medicine-card">
+                        <div class="medicine-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Heart Medication</h3>
+                        <ul>
+                            <li>Lisinopril</li>
+                            <li>Amlodipine</li>
+                            <li>Atorvastatin</li>
+                        </ul>
+                        <span class="availability limited">Limited</span>
+                    </div>
+
+                    <div class="medicine-card">
+                        <div class="medicine-icon">
+                            <i class="fas fa-lungs"></i>
+                        </div>
+                        <h3>Respiratory</h3>
+                        <ul>
+                            <li>Albuterol</li>
+                            <li>Prednisone</li>
+                            <li>Montelukast</li>
+                        </ul>
+                        <span class="availability available">Available</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Contact -->
+        <section class="emergency-section">
+            <div class="container">
+                <div class="emergency-card">
+                    <h2><i class="fas fa-exclamation-triangle"></i> Emergency Medicine Request</h2>
+                    <p>For life-threatening emergencies requiring immediate medicine access</p>
+                    <div class="emergency-contacts">
+                        <a href="tel:+1234567890" class="btn btn-emergency">
+                            <i class="fas fa-phone"></i> Call Emergency Line
+                        </a>
+                        <a href="sms:+1234567890" class="btn btn-secondary">
+                            <i class="fas fa-sms"></i> Text Emergency
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MedReach. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script>
+        // Medicine request form handling
+        document.getElementById('medicineRequestForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Medicine request submitted successfully! We will contact you within 24 hours.');
+            // Here you would typically send the data to your backend
+        });
+    </script>
+</body>
+</html>

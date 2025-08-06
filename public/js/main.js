@@ -26,15 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Button click handlers
     if (loginBtn) {
         loginBtn.addEventListener('click', () => {
-            alert('Login functionality coming soon!');
-            // Will be implemented with authentication
+            window.location.href = '/auth/login.html';
         });
     }
 
     if (registerBtn) {
         registerBtn.addEventListener('click', () => {
-            alert('Registration form will be implemented next!');
-            // Will be implemented with user registration
+            window.location.href = '/auth/register.html';
         });
     }
 
